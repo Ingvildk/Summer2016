@@ -12,8 +12,12 @@ export default class Searchbox extends React.Component {
 
 	submitHandler() {
 		console.log("submitHandler is running");
+		let input = this.refs.myInput;
+		let inputValue = input.value;
+		console.log("-----submitHandler-----");
+		console.log(inputValue);
 		let stateInfo = this.state;
-		stateInfo.data.push("California");
+		stateInfo.data.push(inputValue);
 		this.setState({stateInfo});
 	}
 
@@ -24,7 +28,7 @@ export default class Searchbox extends React.Component {
 		console.log(elements);
 		return (
 			<div>
-				<input type="text"/>
+				<input type="text" ref="myInput"/>
 				<br/>
 				<button type="submit" value="Submit" onClick={this.submitHandler}> </button>
 				<ol> {elements} </ol>
