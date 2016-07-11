@@ -1,6 +1,7 @@
 import React from 'react';
 import Color from './Color';
 import Searchbox from './Searchbox';
+import ToDoBox from './ToDoBox';
 
 export default class App extends React.Component {
 	
@@ -23,7 +24,7 @@ export default class App extends React.Component {
       <div>
       	<h1 style={style}> {this.state.name}</h1>
       	<Color test = {this.state.country}/>
-        <Searchbox />
+        <ToDoBox />
       </div>
     );
   }
