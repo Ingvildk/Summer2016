@@ -24,6 +24,12 @@ export default class App extends React.Component {
       <div>
       	<h1 style={style}> {this.state.name}</h1>
       	<Color test = {this.state.country}/>
+        <h2> Searchbox</h2>
+        <Searchbox />
+        <br/>
+        <br/>
+        <br/>
+        <h2>TO  DO   BOX</h2>
         <ToDoBox />
       </div>
     );
