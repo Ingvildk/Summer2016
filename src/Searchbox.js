@@ -6,23 +6,28 @@ export default class Searchbox extends React.Component {
 		super();
 		this.state = {
 			data: [{name:"Ingvild", age:22},{name:"Erik", age:61},{name:"Wenke", age:60},{name: "Kyrre", age: 30},{name: "Haavard", age: 32}],
-			searchFilter:[]
+			searchFilter:[{name:"Ingvild", age:22},{name:"Erik", age:61},{name:"Wenke", age:60},{name: "Kyrre", age: 30},{name: "Haavard", age: 32}]
 		};
 		this.changeHandler = this.changeHandler.bind(this);
 
 	}
 
-	changeHandler() {
+	componentWillMount() {
 
+
+	}
+
+
+	changeHandler() {
 		let input = this.refs.myInput;
 		let inputValue = input.value;
 		let dataValue = this.state.data;
 		let newSearchFilter = [];
 		dataValue.map(element => {
-		let el = element.name.toLowerCase();	
-		if (el.includes(inputValue)) {
-			newSearchFilter.push(element);			
-		}
+			let el = element.name.toLowerCase();
+			if (el.includes(inputValue)) {
+				newSearchFilter.push(element);			
+			}
 		})
 		this.state.searchFilter = newSearchFilter;
 		let newState = this.state
