@@ -12,12 +12,6 @@ export default class Searchbox extends React.Component {
 
 	}
 
-	componentWillMount() {
-
-
-	}
-
-
 	changeHandler() {
 		let input = this.refs.myInput;
 		let inputValue = input.value;
@@ -46,7 +40,6 @@ export default class Searchbox extends React.Component {
 			<div>
 				<input type="text" ref="myInput" onChange={this.changeHandler}/>
 				<br/>
-				<button type="submit" value="Submit" onClick={this.submitHandler}> </button>
 				<ol> {elements} </ol>
 			</div>
 			);
