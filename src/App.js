@@ -2,16 +2,22 @@ import React from 'react';
 import Color from './Color';
 import Searchbox from './Searchbox';
 import ToDoBox from './ToDoBox';
+import Testing from './testingCallbackFunctions';
 
 export default class App extends React.Component {
 	
   constructor() {
     super();
     this.state = {country: "California" };
+    this.clickHandler = this.clickHandler.bind(this);
   }
 
   componentWillMount() {
     this.setState({name:"Design"});
+  }
+
+  clickHandler() {
+    console.log("clickHandler callback working");
   }
 	
   render() {
@@ -24,6 +30,9 @@ export default class App extends React.Component {
       <div>
       	<h1 style={style}> {this.state.name}</h1>
       	<Color test = {this.state.country}/>
+        <Testing klickHandler={this.clickHandler}/>
+        <br/>
+        <br/>
         <h2> Searchbox</h2>
         <Searchbox />
         <br/>
