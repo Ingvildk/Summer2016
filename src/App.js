@@ -31,7 +31,7 @@ export default class App extends React.Component {
       <div>
       	<h1 style={style}> {this.state.name}</h1>
       	 <Color test = {this.state.country}/>
-        <Testing klickHandler={this.clickHandler}/>
+        <Testing klickHandler={this.clickHandler.bind(this)}/>
           <br/>
           <br/>
           <h2> Searchbox</h2>

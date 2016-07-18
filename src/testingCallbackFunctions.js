@@ -15,7 +15,7 @@ export default class Testing extends React.Component {
 	render() {
 		let i = 4;
 		return (
-			<button onClick={this.testHandler(this,i)}>
+			<button onClick={this.testHandler.bind(this,i)}>
 				Testing
 			</button>
 			);
