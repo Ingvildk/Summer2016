@@ -16,8 +16,9 @@ export default class App extends React.Component {
     this.setState({name:"Design"});
   }
 
-  clickHandler() {
-    console.log("clickHandler callback working");
+  clickHandler(id) {
+    console.log("clickHandler callback working. The id should print 4");
+    consoole.log(id);
   }
 	
   render() {
@@ -29,15 +30,15 @@ export default class App extends React.Component {
     return (
       <div>
       	<h1 style={style}> {this.state.name}</h1>
-      	<Color test = {this.state.country}/>
+      	 <Color test = {this.state.country}/>
         <Testing klickHandler={this.clickHandler}/>
-        <br/>
-        <br/>
-        <h2> Searchbox</h2>
-        <Searchbox />
-        <br/>
-        <br/>
-        <br/>
+          <br/>
+          <br/>
+          <h2> Searchbox</h2>
+          <Searchbox />
+          <br/>
+          <br/>
+          <br/>
         <h2>TO  DO   BOX</h2>
         <ToDoBox />
       </div>
