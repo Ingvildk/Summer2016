@@ -4,12 +4,11 @@ export default class Testing extends React.Component {
 
 	constructor(props) {
 		super(props);
-		this.klickHandler = this.props.klickHandler.bind(this);
+		this.klickHandler = this.props.klickHandler;
 	}
 	testHandler(i) {
-		console.log("testHandler running. I should be 4");
-		console.log(i);
-		this.klickHandler.bind(this,i);
+		console.log("testing");
+		this.props.klickHandler.bind(this,i);
 	}
 
 	render() {

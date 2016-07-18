@@ -18,7 +18,7 @@ export default class App extends React.Component {
 
   clickHandler(id) {
     console.log("clickHandler callback working. The id should print 4");
-    consoole.log(id);
+    console.log(id);
   }
 	
   render() {
