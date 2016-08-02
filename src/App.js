@@ -3,6 +3,7 @@ import Color from './Color';
 import Searchbox from './Searchbox';
 import ToDoBox from './ToDoBox';
 import Testing from './testingCallbackFunctions';
+import { Link } from 'react-router';
 
 export default class App extends React.Component {
 	
@@ -29,18 +30,13 @@ export default class App extends React.Component {
 
     return (
       <div>
-      	<h1 style={style}> {this.state.name}</h1>
-      	 <Color test = {this.state.country}/>
-        <Testing klickHandler={this.clickHandler.bind(this)}/>
-          <br/>
-          <br/>
-          <h2> Searchbox</h2>
-          <Searchbox />
-          <br/>
-          <br/>
-          <br/>
-        <h2>TO  DO   BOX</h2>
-        <ToDoBox />
+      	<h1 style={style}> {this.state.country}</h1>
+      	 <ul className="header">
+          <Link to="color"><li>Color</li> </Link>
+          <Link to="searchbox"><li>Searchbox</li></Link>
+          <Link to="todobox"><li>ToDoBox</li></Link>
+          <Link to="testing"><li>Testing</li></Link>
+         </ul>
       </div>
     );
   }
