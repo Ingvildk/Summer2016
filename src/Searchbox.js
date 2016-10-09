@@ -5,8 +5,8 @@ export default class Searchbox extends React.Component {
 	constructor() {
 		super();
 		this.state = {
-			data: [{name:"Ingvild", age:22},{name:"Erik", age:61},{name:"Wenke", age:60},{name: "Kyrre", age: 30},{name: "Haavard", age: 32}],
-			searchFilter:[{name:"Ingvild", age:22},{name:"Erik", age:61},{name:"Wenke", age:60},{name: "Kyrre", age: 30},{name: "Haavard", age: 32}]
+			data: [{name:"Abeillia", age:22, photo:"https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Archilochus-alexandri-002-edit.jpg/250px-Archilochus-alexandri-002-edit.jpg" },{name:"rhinoceros", age:61, photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Rhinoceros_unicornis,_Kaziranga_(2006).jpg/250px-Rhinoceros_unicornis,_Kaziranga_(2006).jpg"},{name:"leopard", age:60, photo:"https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/African_Leopard_5.JPG/250px-African_Leopard_5.JPG"},{name: "leopard", age: 30, photo:"https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/African_Leopard_5.JPG/250px-African_Leopard_5.JPG"},{name: "giraf", age: 32, photo:"http://static.newworldencyclopedia.org/thumb/0/02/Giraffe08_-_melbourne_zoo_edit.jpg/250px-Giraffe08_-_melbourne_zoo_edit.jpg"}],
+			searchFilter:[{name:"Abeillia", age:22, photo:"https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Archilochus-alexandri-002-edit.jpg/250px-Archilochus-alexandri-002-edit.jpg" },{name:"rhinoceros", age:61, photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Rhinoceros_unicornis,_Kaziranga_(2006).jpg/250px-Rhinoceros_unicornis,_Kaziranga_(2006).jpg"},{name:"leopard", age:60, photo:"https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/African_Leopard_5.JPG/250px-African_Leopard_5.JPG"},{name: "leopard", age: 30, photo:"https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/African_Leopard_5.JPG/250px-African_Leopard_5.JPG"},{name: "giraf", age: 32, photo:"http://static.newworldencyclopedia.org/thumb/0/02/Giraffe08_-_melbourne_zoo_edit.jpg/250px-Giraffe08_-_melbourne_zoo_edit.jpg"}]
 		};
 		this.changeHandler = this.changeHandler.bind(this);
 
@@ -34,10 +34,11 @@ export default class Searchbox extends React.Component {
 
 	render() {
 		let count = 0;
-		let elements = this.state.searchFilter.map(el=> <li key={count++}> {el.name} </li>);
+		let elements = this.state.searchFilter.map(el=> <div> <li key={count++}> {el.name} </li> <img src={el.photo} /> </div>);
 		let inputValue = this.state.value;
 		return (
 			<div>
+			  <h3>Illegal things to buys</h3>
 				<input type="text" ref="myInput" onChange={this.changeHandler}/>
 				<br/>
 				<ol> {elements} </ol>
