@@ -9,7 +9,7 @@ export default class App extends React.Component {
 	
   constructor() {
     super();
-    this.state = {country: "California" };
+    this.state = {name: "Girl Force US" };
     this.clickHandler = this.clickHandler.bind(this);
   }
 
@@ -25,18 +25,33 @@ export default class App extends React.Component {
   render() {
     const style = {
       paddingLeft: 200,
-      font: "Times New Roman",
+      font: "Times New Roman",     
     };
 
+const styleLI = {
+	display: "inline",
+	paddingLeft: 200,
+}; 
+
+
     return (
-      <div>
-      	<h1 style={style}> {this.state.country}</h1>
-      	 <ul className="header">
-          <Link to="color"><li>Color</li> </Link>
-          <Link to="searchbox"><li>Searchbox</li></Link>
-          <Link to="todobox"><li>ToDoBox</li></Link>
-          <Link to="testing"><li>Testing</li></Link>
+      <div className="bgdiv">
+      	<div style={style}> ..</div>
+      	<p></p>
+      	<div className="top-bar-right">
+      	 <ul  className="vertical medium-horizontal menu" data-responsive-menu="drilldown medium-dropdown">
+          <Link to="color"><li style = {styleLI}>About</li> </Link>
+          <Link to="searchbox"><li style = {styleLI} >Searchbox</li></Link>
+          <Link to="todobox"><li style = {styleLI} >Todo</li></Link>
+          <Link to="testing"><li style = {styleLI} > Email</li></Link>
          </ul>
+        </div>
+        .........................
+        .........
+        ..
+        ..                 
+        <div className="bgdiv">
+        </div>
       </div>
     );
   }
